@@ -1,0 +1,42 @@
+﻿@model IEnumerable<WebMvcForRequestToApi.ViewModel.BookVm>
+
+@{
+    ViewData["Title"] = "GetBookWithAuth";
+}
+
+<h1>GetBookWithAuth</h1>
+
+<p>
+    <a asp-action="SendBookWithAuth">Yeni Kitap Ekle</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.BookName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PageNumber)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AuthorId)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.BookName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PageNumber)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AuthorId)
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
